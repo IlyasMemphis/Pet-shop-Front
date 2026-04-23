@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap');
+
+:root {
+    --primary-color: #6C5DD3;
+    --secondary-color: #FF7E5F;
+    --light-gray: #F4F4F4;
+    --dark-gray: #282828;
+    --gradient-main: linear-gradient(45deg, #6C5DD3, #A066FF);
+    --gradient-secondary: linear-gradient(45deg, #FF7E5F, #FEB47B);
+}
+
+.container {
+    font-family: "Montserrat", sans-serif;
+    max-width: 1360px;
+    margin: 40px auto;
+    text-align: center;
+    animation: fadeIn 0.6s ease-in-out;
+    padding: 20px;
+}
+
+.categories {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 800;
+    font-size: 42px;
+    color: #282828;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+}
+
+.categoriesList {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+    justify-content: center;
+    padding: 20px;
+}
+
+.categoryItem {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    text-align: center;
+    text-decoration: none;
+}
+
+.categoryItem:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.categoryItem img {
+    width: 100%;
+    max-width: 250px;
+    height: 200px;
+    border-radius: 10px;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+}
+
+.categoryItem:hover img {
+    transform: scale(1.1);
+}
+
+.categoryItem h3 {
+    font-weight: 600;
+    font-size: 18px;
+    color: var(--dark-gray);
+    font-family: "Montserrat", sans-serif;
+    margin-top: 12px;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(10px);
+    }
+}
+
+@media (max-width: 768px) {
+    .categoriesList {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 16px;
+    }
+
+    .categoryItem img {
+        height: 150px;
+    }
+
+    .categories h1 {
+        font-size: 36px;
+    }
+}

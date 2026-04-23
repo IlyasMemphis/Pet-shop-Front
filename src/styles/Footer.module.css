@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+.footer {
+    bottom: 0;
+    width: 100%;
+    background-color: #ffffff;
+    padding: 16px;
+    position: relative;
+    font-family: "Montserrat", sans-serif;
+    margin-top: 40px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.footer h1 {
+    font-weight: 700;
+    font-size: 64px;
+    color: #282828;
+    font-family: "Montserrat";
+    text-align: left;
+    margin-left: 40px;
+    animation: slideUp 1s ease-out;
+}
+
+.contactInfo_and_map {
+    width: 1360px;
+    height: 758px;
+    gap: 32px;
+    margin-top: 40px;
+}
+
+.contactInfo {
+    width: 1360px;
+    height: 376px;
+    gap: 32px;
+}
+
+.phoneSocials, .adressWH {
+    display: flex;
+    justify-content: space-between;
+    gap: 32px;
+    margin-top: 32px;
+    opacity: 0;
+    animation: fadeInSection 1s ease-in-out forwards;
+}
+
+.phone, .socials, .adress, .workingHours {
+    width: 780px;
+    height: 150px;
+    border-radius: 16px;
+    background-color: #F1F3F4;
+    padding-left: 32px;
+    gap: 16px;
+    transition: all 0.3s ease-in-out;
+}
+
+.socials, .workingHours {
+    width: 548px;
+}
+
+.phone:hover, .socials:hover, .adress:hover, .workingHours:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.phone p, .socials p, .adress p, .workingHours p {
+    font-weight: 500;
+    font-size: 20px;
+    color: #8B8B8B;
+}
+
+.phone h3, .socials h3, .adress h3, .workingHours h3 {
+    font-weight: 600;
+    font-size: 40px;
+    color: #282828;
+    font-family: "Montserrat";
+}
+
+.socials img {
+    width: 30px;
+    height: 30px;
+    margin-right: 16px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.socials img:hover {
+    transform: scale(1.2);
+}
+
+.map {
+    width: 1360px;
+    height: 350px;
+    border-radius: 16px;
+    border: none;
+    margin-top: 32px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.map:hover {
+    transform: scale(1.05);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInSection {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .contactInfo_and_map {
+        flex-direction: column;
+        text-align: left;
+    }
+
+    .phone, .socials, .adress, .workingHours {
+        width: 100%;
+    }
+
+    .map {
+        height: 250px;
+    }
+}

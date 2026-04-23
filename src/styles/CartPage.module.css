@@ -1,0 +1,247 @@
+.cartContainer {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 20px;
+    margin-bottom: 50px;
+}
+
+.title {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    font-size: 36px;
+    color: #282828;
+    margin-bottom: 20px;
+}
+
+.cartContent {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.itemsList {
+    font-family: "Montserrat";
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.cartItem {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #fff;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.itemImage {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.itemDetails {
+    flex: 1;
+    padding: 0 15px;
+}
+
+.quantityControls {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.quantityControls button {
+    width: 32px;
+    height: 32px;
+    border: none;
+    background: #ddd;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 5px;
+}
+
+.quantityControls input {
+    width: 40px;
+    text-align: center;
+    border: none;
+    font-size: 16px;
+    background: none;
+}
+
+.itemPrice {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 5px;
+}
+
+.currentPrice {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.oldPrice {
+    text-decoration: line-through;
+    color: #888;
+}
+
+.removeItem {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #888;
+}
+
+.orderSummary {
+    background: #f8f8f8;
+    padding-left: 32px;
+    padding-right: 32px;
+    border-radius: 8px;
+}
+
+.orderSummary p {
+    font-family: "Montserrat";
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 130%;
+    color: #8B8B8B;
+}
+
+.orderSummary h3 {
+    font-size: 40px;
+    font-family: "Montserrat";
+}
+
+.totalPrice {
+    font-family: "Montserrat";
+    font-size: 64px;
+    font-weight: 700;
+    color: #282828;
+}
+
+.orderForm {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-right: 16px;
+    padding-bottom: 32px;
+}
+
+.orderForm input {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.orderButton {
+    background: blue;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.orderForm .errorMessage {
+    color: #e74c3c;
+    font-size: 14px;
+    font-family: "Montserrat", sans-serif;
+    margin-top: 5px;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.orderForm input:invalid {
+    border-color: #e74c3c;
+    background-color: #fbe4e4;
+}
+
+.orderForm input:valid {
+    border-color: #2ecc71;
+}
+
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(8px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+
+.modalOverlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modalContent {
+    background: #fff;
+    padding: 25px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.3);
+    width: 90%;
+    max-width: 400px;
+    transform: scale(0.8);
+    opacity: 0;
+    transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+}
+
+.modalOverlay.active .modalContent {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.modalContent h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.modalContent p {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.modalCloseButton {
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 8px;
+    transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.modalCloseButton:hover {
+    background: linear-gradient(135deg, #2575fc, #6a11cb);
+    transform: scale(1.05);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
